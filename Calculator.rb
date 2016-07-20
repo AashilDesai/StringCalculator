@@ -2,18 +2,18 @@
 #The goal of StringCalculator is help me learn RSpec
 
 def sumString(str)
-	if str.size == 0 #empty string
-		return 0
-	else
-		split = str.partition(',')
-		if split[1] == ',' #meaning that there was a successful partition
-			return split[0].to_i + split[2].to_i
-		else #there was no ',' in the str
-			return str.to_i
-		end
+	split = str.partition(',')
+
+	if split[1] == ',' #there was a ',', meaning there's more than one argument
+		#recursively handles issue
+		return split[0].to_i + sumString(split[2])
+	else 
+		return str.to_i
 	end
 end
 
+puts "-" * 10
 puts "Enter the string you wish to sum (separate the 2 numbers by a comma)"
 sum = sumString(gets.chomp)
 puts "The sum is: #{sum}"
+puts "-" * 10
