@@ -1,6 +1,7 @@
 # spec/string_calculator_spec.rb
 
 require "Calculator"
+include Calculator
 
 describe Calculator do
 
