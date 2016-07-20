@@ -2,16 +2,12 @@
 #The goal of StringCalculator is help me learn RSpec
 
 def sumString(str)
-	if str.size == 0 #empty string
-		return 0
-	else
-		split = str.partition(',')
-		if split[1] == ',' #meaning that there was a successful partition
-				#recursively handles issue to repartition
-			return split[0].to_i + sumString(split[2])
-		else #there was no ',' in the str
-			return str.to_i
-		end
+	split = str.partition(',')
+	if split[1] == ',' #meaning that there was a successful partition
+		#recursively handles issue to repartition
+		return split[0].to_i + sumString(split[2])
+	else #there was no ',' in the str
+		return str.to_i
 	end
 end
 
