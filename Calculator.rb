@@ -13,7 +13,7 @@ def sumString(str)
 end
 
 puts "-" * 10
-puts "Enter the string you wish to sum (separate the 2 numbers by a comma)"
+puts "Enter the string you wish to sum (separate the numbers with commas)"
 sum = sumString(gets.chomp)
 puts "The sum is: #{sum}"
 puts "-" * 10
