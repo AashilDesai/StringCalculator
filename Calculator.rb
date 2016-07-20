@@ -7,7 +7,8 @@ def sumString(str)
 	else
 		split = str.partition(',')
 		if split[1] == ',' #meaning that there was a successful partition
-			return split[0].to_i + split[2].to_i
+				#recursively handles issue to repartition
+			return split[0].to_i + sumString(split[2])
 		else #there was no ',' in the str
 			return str.to_i
 		end
